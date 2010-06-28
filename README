@@ -1,0 +1,15 @@
+Git Builder
+
+Git Builder is designed to easily manage the automatic creation of Linux Packages (RPM, DEB) from Git repositories.
+
+This project was created and then destroyed by a prior employer. The working system simply worked off a "per" commit basis. If there was no package in cache for the current commit hash a package was built.
+
+DEBs were built using Alien to convert the RPMs
+
+RPMs were built on a per request basis (if no cache for commit existed)
+
+For packaging a repo needed a .build folder with an rpm folder and inside atleast an <arch>.spec file - most all projects used noarch. This was a typical spec file with the exclusion of VER and REV VER was built based off the last Git Tag and REV was increased based off the number of rebuilds of the RPM since the last version tag.
+
+The new system will employ only building on last tag or from only a branch (ie master or "prod" branch) to avoid building incomplete code.
+
+Documentation for building simple RPM Spec files will be included. As well as sample apache configuration files for deployment on a remote git repository.
